@@ -36,17 +36,17 @@ const Button = styled.button`
     z-index: 2;
     padding: 0px;
     margin: 0px;
+    cursor: pointer;
 `;
 
 const ButtonContainer = styled.div`
-    
-    padding: 8px 32px;
     background: #716FB2;
     border-radius: 32px;
     box-shadow: 4px 12px 24px rgba(0,0,0, 0.25);
 `;
 
 const ButtonText = styled.div`
+padding: 8px 32px;
     text: #01001e;
     font-size: 20px;
     font-weight: medium;
