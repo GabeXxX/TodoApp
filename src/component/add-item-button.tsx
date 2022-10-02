@@ -5,6 +5,10 @@ const ButtonContainer = styled.div`
     background: #716FB2;
     box-shadow: 4px 12px 24px rgba(0,0,0, 0.25);
     border-radius: 32px;
+    &:hover {
+        box-shadow: 4px 12px 24px rgba(0,0,0, 0.6);
+        transition: 0.2s;
+      }
       
 `;
 

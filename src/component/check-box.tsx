@@ -9,6 +9,11 @@ const CheckboxContainer = styled.div`
   position: relative;
   margin-right: 24px;
   margin-left: 40px;
+  border-radius: 8px;
+  &:hover {
+    box-shadow: 4px 12px 24px rgba(0,0,0, 0.6);
+    transition: 0.2s;
+  }
 `
 
 // Hide checkbox visually but remain accessible to screen readers.
@@ -23,14 +28,16 @@ const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
   position: absolute;
   z-index: 1;
   cursor: pointer;
+  
+  
 `
 const CheckBoxOn = styled.svg` 
-
     position: absolute;
+    
 `;
 
 const CheckBoxOff = styled.svg` 
-
+  
     position: absolute;
 `;
 
@@ -43,6 +50,7 @@ const StyledCheckbox = styled.div<{ checked: boolean }>`
   ${CheckBoxOn} {
     visibility: ${props => props.checked ? 'visible' : 'hidden'}
   }
+  
 `
 
 
