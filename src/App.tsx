@@ -1,25 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
+import TodoContext from './context/todo-context';
+import useLocalStorage from './hooks/local-storage';
+import TodoScreen from './screen/list-screen';
+import GlobalStyle from './styles';
+import { Todo } from './data-model';
+
+const Layout = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  const [todos, setTodos] = useLocalStorage<Todo[]>('todo', []);
+  
+  return ( //TodoContext.Provider provide some sort of value anywhere down the component tree
+  <>
+    <GlobalStyle />
+    <TodoContext.Provider value={[todos, setTodos]}>
+      <Layout>
+        <TodoScreen></TodoScreen>
+      </Layout>
+    </TodoContext.Provider>
+
+  </>
   );
 }
 
